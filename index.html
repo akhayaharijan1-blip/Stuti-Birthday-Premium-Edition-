@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💐 Madam Ji Stuti Birthday 💐</title>
+
+<style>
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ background:linear-gradient(180deg,#060816,#12002b);
+ color:white;
+ font-family: 'Segoe UI',sans-serif;
+ overflow-x:hidden;
+ text-align:center;
+}
+
+.stars{
+ position:fixed;
+ width:100%;
+ height:100%;
+ top:0;
+ left:0;
+ z-index:-1;
+ background:
+ radial-gradient(white 1px, transparent 1px);
+ background-size:40px 40px;
+ animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+ 50%{
+ opacity:.5;
+ }
+}
+
+.hero{
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ padding:20px;
+}
+
+.small{
+ font-size:22px;
+ color:#ffd700;
+ margin-bottom:15px;
+}
+
+h1{
+ font-size:45px;
+ color:#ffcc00;
+ text-shadow:
+ 0 0 15px gold,
+ 0 0 30px orange;
+}
+
+.date{
+ margin-top:15px;
+ font-size:20px;
+}
+
+.gift{
+ font-size:90px;
+ margin:35px;
+ cursor:pointer;
+ animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+50%,0%,100%{
+ transform:translateY(0);
+}
+25%{
+ transform:translateY(-25px);
+}
+}
+
+.btn{
+ background:#ffd700;
+ color:#111;
+ border:none;
+ padding:12px 25px;
+ border-radius:25px;
+ font-size:18px;
+ cursor:pointer;
+ font-weight:bold;
+}
+
+.section{
+ min-height:100vh;
+ padding:50px 20px;
+ display:none;
+}
+
+.gallery{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:20px;
+ margin-top:30px;
+}
+
+.photo{
+ width:180px;
+ height:220px;
+ border:3px solid gold;
+ border-radius:20px;
+ overflow:hidden;
+ box-shadow:0 0 25px gold;
+ transition:0.5s;
+}
+
+.photo:hover{
+ transform:scale(1.08);
+}
+
+.photo img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.message-box{
+ max-width:750px;
+ margin:30px auto;
+ background:rgba(255,255,255,0.08);
+ padding:25px;
+ border-radius:25px;
+ box-shadow:0 0 25px #ffcc00;
+ line-height:1.9;
+ font-size:18px;
+}
+
+.emoji-rain{
+ position:fixed;
+ top:-50px;
+ font-size:30px;
+ animation:fall 8s linear infinite;
+}
+
+@keyframes fall{
+ 0%{
+ transform:translateY(-100px);
+ opacity:1;
+ }
+ 100%{
+ transform:translateY(110vh);
+ opacity:0;
+ }
+}
+
+.music{
+ position:fixed;
+ right:20px;
+ bottom:20px;
+ background:gold;
+ color:black;
+ padding:15px;
+ border-radius:50%;
+ font-size:22px;
+ cursor:pointer;
+ box-shadow:0 0 20px gold;
+}
+
+.footer{
+ margin-top:40px;
+ font-size:22px;
+ color:#ffd700;
+}
+
+@media(max-width:600px){
+
+h1{
+ font-size:32px;
+}
+
+.gift{
+ font-size:75px;
+}
+
+.small{
+ font-size:18px;
+}
+
+.photo{
+ width:140px;
+ height:180px;
+}
+
+.message-box{
+ font-size:16px;
+}
+
+}
+
+</style>
+
+<script>
+function openGift(){
+
+document.querySelector(".hero").style.display="none";
+
+document.getElementById("surprise")
+.style.display="block";
+
+createEmoji();
+
+let music=document.getElementById("music");
+
+music.play();
+
+}
+
+
+function createEmoji(){
+
+let emojis=[
+"💐","🎀","🧿","💗",
+"✨","🥳","🎉",
+"🎊","🤌","🌸"
+];
+
+setInterval(()=>{
+
+let e=document.createElement("div");
+
+e.className="emoji-rain";
+
+e.innerHTML=
+emojis[Math.floor(Math.random()*emojis.length)];
+
+e.style.left=Math.random()*100+"%";
+
+document.body.appendChild(e);
+
+setTimeout(()=>{
+e.remove();
+},8000);
+
+},500);
+
+}
+
+function playMusic(){
+
+let music=
+document.getElementById("music");
+
+if(music.paused){
+music.play();
+}
+else{
+music.pause();
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="hero">
+
+<p class="small">
+💗 A little surprise is waiting for you Madam Ji ✨
+</p>
+
+<h1>
+Happy Birthday<br>
+Madam Ji Stuti 💐
+</h1>
+
+<p class="date">
+19 September 2026 🥳🎀
+</p>
+
+<div class="gift"
+onclick="openGift()">
+🎁
+</div>
+
+<button class="btn">
+Open Your Surprise 🎊
+</button>
+
+</div>
+
+<div id="surprise" class="section">
+
+<h1>
+💐 Madam Ji Stuti 💐
+</h1>
+
+<p class="date">
+A Beautiful Day - 19 September 2026 🎀🌸
+</p>
+
+
+<div class="gallery">
+
+<div class="photo">
+<img src="stuti1.jpg" alt="Stuti Photo 1">
+</div>
+
+<div class="photo">
+<img src="stuti2.jpg" alt="Stuti Photo 2">
+</div>
+
+<div class="photo">
+<img src="stuti3.jpg" alt="Stuti Photo 3">
+</div>
+
+</div>
+
+
+<div class="message-box">
+
+💗 Dear Madam Ji Stuti 💗
+<br><br>
+
+On your special birthday, I wish that your life is always filled with happiness, success and countless beautiful moments. 💐✨
+
+You are a precious part of our family and your smile brings joy to everyone around you. 🎀🌸
+
+May God always bless you with good health, endless happiness and all the success you dream of. 🧿💗
+
+Keep smiling, keep shining and keep spreading positivity everywhere. ✨🥳
+
+Once again, Happy Birthday Madam Ji! 🎉🎊
+
+<br><br>
+
+With lots of love and blessings 💐
+
+<br>
+
+— Akhaya 💗
+
+</div>
+
+
+<div class="footer">
+
+✨ Made with love for Madam Ji Stuti ✨
+
+</div>
+
+</div>
+
+
+<!-- Music File -->
+<audio id="music" loop>
+<source src="piano.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- Music Button -->
+<div class="music"
+onclick="playMusic()">
+🎹
+</div>
+
+
+<script>
+
+// Button ko bhi gift ki tarah kaam karwana
+document.querySelector(".btn")
+.addEventListener("click", openGift);
+
+</script>
+
+
+</body>
+  </html>
